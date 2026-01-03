@@ -36,7 +36,7 @@ cubecl-cpu = ["burn-backend/cubecl-cpu"]
 experimental-named-tensor = []
 
 [dependencies]
-burn-std = { path = "../burn-std", version = "=0.20.0-pre.6", default-features = false }
+burn-std = { git = "https://github.com/organization-ai-projects/burn-core-fork.git", branch = "main", version = "=0.20.0-pre.6", default-features = false }
 burn-backend = { path = "../burn-backend", version = "=0.20.0-pre.6", default-features = false }
 
 colored = { workspace = true, optional = true }
