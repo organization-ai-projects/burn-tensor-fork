@@ -650,7 +650,7 @@ name = "burn-autodiff"
 version = "0.20.0-pre.6"
 dependencies = [
  "burn-backend",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "derive-new",
  "hashbrown 0.16.1",
  "log",
@@ -665,7 +665,7 @@ dependencies = [
 name = "burn-backend"
 version = "0.20.0-pre.6"
 dependencies = [
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "bytemuck",
  "cubecl",
  "derive-new",
@@ -706,7 +706,7 @@ name = "burn-candle"
 version = "0.20.0-pre.6"
 dependencies = [
  "burn-backend",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "burn-tch",
  "candle-core",
  "derive-new",
@@ -719,7 +719,7 @@ dependencies = [
  "burn-communication",
  "burn-cuda",
  "burn-ndarray",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "burn-tensor",
  "burn-wgpu",
  "bytes",
@@ -740,7 +740,7 @@ dependencies = [
  "burn",
  "burn-collective",
  "burn-communication",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "futures",
  "interprocess",
  "rmp-serde",
@@ -756,7 +756,7 @@ name = "burn-communication"
 version = "0.20.0-pre.6"
 dependencies = [
  "axum",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "burn-tensor",
  "bytes",
  "derive-new",
@@ -789,7 +789,7 @@ dependencies = [
  "burn-remote",
  "burn-rocm",
  "burn-router",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "burn-tch",
  "burn-tensor",
  "burn-vision",
@@ -832,7 +832,7 @@ dependencies = [
  "burn-cubecl-fusion",
  "burn-fusion",
  "burn-ir",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "cubecl",
  "cubek",
  "derive-new",
@@ -850,7 +850,7 @@ dependencies = [
  "burn-backend",
  "burn-fusion",
  "burn-ir",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "cubecl",
  "cubek",
  "derive-new",
@@ -872,7 +872,7 @@ dependencies = [
 name = "burn-dataset"
 version = "0.20.0-pre.6"
 dependencies = [
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "csv",
  "derive-new",
  "dirs",
@@ -973,7 +973,7 @@ dependencies = [
  "burn-autodiff",
  "burn-backend",
  "burn-ir",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "bytemuck",
  "bytes",
  "const-random",
@@ -1053,7 +1053,7 @@ dependencies = [
  "burn-ir",
  "burn-ndarray",
  "burn-router",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "burn-tensor",
  "bytes",
  "derive-new",
@@ -1086,7 +1086,7 @@ dependencies = [
  "burn-backend",
  "burn-ir",
  "burn-ndarray",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "burn-tensor",
  "burn-wgpu",
  "hashbrown 0.16.1",
@@ -1109,6 +1109,20 @@ dependencies = [
  "reqwest",
  "serde",
  "tokio",
+]
+
+[[package]]
+name = "burn-std"
+version = "0.20.0-pre.6"
+source = "git+https://github.com/organization-ai-projects/burn-core-fork.git?branch=main#1efb53ee348eca3d96e3b73e0d460de7ddd5900c"
+dependencies = [
+ "bytemuck",
+ "bytes",
+ "cubecl",
+ "cubecl-common",
+ "half",
+ "num-traits",
+ "serde",
 ]
 
 [[package]]
@@ -1155,7 +1169,7 @@ name = "burn-tensor"
 version = "0.20.0-pre.6"
 dependencies = [
  "burn-backend",
- "burn-std",
+ "burn-std 0.20.0-pre.6 (git+https://github.com/organization-ai-projects/burn-core-fork.git?branch=main)",
  "colored 3.0.0",
  "derive-new",
  "num-traits",
@@ -4188,6 +4202,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "hyper-tls"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "70206fc6890eaca9fde8a0bf71caa2ddfc9fe045ac9e5c70df101a7dbde866e0"
+dependencies = [
+ "bytes",
+ "http-body-util",
+ "hyper",
+ "hyper-util",
+ "native-tls",
+ "tokio",
+ "tokio-native-tls",
+ "tower-service",
+]
+
+[[package]]
 name = "hyper-util"
 version = "0.1.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -4206,9 +4236,11 @@ dependencies = [
  "percent-encoding",
  "pin-project-lite",
  "socket2",
+ "system-configuration",
  "tokio",
  "tower-service",
  "tracing",
+ "windows-registry",
 ]
 
 [[package]]
@@ -4828,6 +4860,16 @@ checksum = "6bd8c0d6c6ed0cd30b3652886bb8711dc4bb01d637a68105a3d5158039b418e6"
 dependencies = [
  "cc",
  "libc",
+]
+
+[[package]]
+name = "lzma-rust2"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c60a23ffb90d527e23192f1246b14746e2f7f071cb84476dd879071696c18a4a"
+dependencies = [
+ "crc",
+ "sha2",
 ]
 
 [[package]]
@@ -7219,6 +7261,7 @@ checksum = "3b4c14b2d9afca6a60277086b0cc6a6ae0b568f6f7916c943a8cdc79f8be240f"
 dependencies = [
  "base64 0.22.1",
  "bytes",
+ "encoding_rs",
  "futures-channel",
  "futures-core",
  "futures-util",
@@ -7228,9 +7271,12 @@ dependencies = [
  "http-body-util",
  "hyper",
  "hyper-rustls",
+ "hyper-tls",
  "hyper-util",
  "js-sys",
  "log",
+ "mime",
+ "native-tls",
  "percent-encoding",
  "pin-project-lite",
  "quinn",
@@ -7242,6 +7288,7 @@ dependencies = [
  "serde_urlencoded",
  "sync_wrapper",
  "tokio",
+ "tokio-native-tls",
  "tokio-rustls",
  "tokio-util",
  "tower",
@@ -8187,6 +8234,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "system-configuration"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3c879d448e9d986b661742763247d3693ed13609438cf3d006f51f5368a5ba6b"
+dependencies = [
+ "bitflags 2.10.0",
+ "core-foundation 0.9.4",
+ "system-configuration-sys",
+]
+
+[[package]]
+name = "system-configuration-sys"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8e1d1b10ced5ca923a1fcb8d03e96b8d3268065d724548c0211415ff6ac6bac4"
+dependencies = [
+ "core-foundation-sys",
+ "libc",
+]
+
+[[package]]
 name = "systemstat"
 version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -8512,6 +8580,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "tokio-native-tls"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bbae76ab933c85776efabc971569dd6119c580d8f5d448769dec1764bf796ef2"
+dependencies = [
+ "native-tls",
+ "tokio",
+]
+
+[[package]]
 name = "tokio-rustls"
 version = "0.26.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -8826,9 +8904,9 @@ dependencies = [
 
 [[package]]
 name = "tracel-xtask"
-version = "2.2.1"
+version = "4.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d9c153ff861f9b62d01145884fcdbd72b1fe90bcca0e0face48443d263a16cca"
+checksum = "52d87cb57f813b9cac91b72b62cdd9ebe0f2cb67f893f6cb713cc86c0b0935ef"
 dependencies = [
  "anyhow",
  "clap",
@@ -8836,21 +8914,26 @@ dependencies = [
  "derive_more",
  "dotenvy",
  "env_logger",
+ "home",
  "log",
  "rand 0.9.2",
  "regex",
+ "reqwest",
+ "serde",
  "serde_json",
  "strum 0.27.2",
+ "toml",
  "tracel-xtask-macros",
- "tracing-subscriber",
+ "zip 6.0.0",
 ]
 
 [[package]]
 name = "tracel-xtask-macros"
-version = "2.2.1"
+version = "4.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ce80fb81ad70dc91a536a3a47d0dd003de54fba384fd1ea62c3af07d41e764dc"
+checksum = "b0f4cb163e7ede5c1365e44714c3ed3d76049e97b20bdba32a2687ff0e4bd024"
 dependencies = [
+ "heck",
  "proc-macro2",
  "quote",
  "syn 2.0.111",
@@ -9819,6 +9902,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "windows-registry"
+version = "0.6.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "02752bf7fbdcce7f2a27a742f798510f3e5ad88dbe84871e5168e2120c3d5720"
+dependencies = [
+ "windows-link 0.2.1",
+ "windows-result 0.4.1",
+ "windows-strings 0.5.1",
+]
+
+[[package]]
 name = "windows-result"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -10302,6 +10396,33 @@ dependencies = [
 
 [[package]]
 name = "zip"
+version = "6.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "eb2a05c7c36fde6c09b08576c9f7fb4cda705990f73b58fe011abf7dfb24168b"
+dependencies = [
+ "aes",
+ "arbitrary",
+ "bzip2 0.6.1",
+ "constant_time_eq 0.3.1",
+ "crc32fast",
+ "deflate64",
+ "flate2",
+ "getrandom 0.3.4",
+ "hmac",
+ "indexmap",
+ "lzma-rust2 0.13.0",
+ "memchr",
+ "pbkdf2 0.12.2",
+ "ppmd-rust",
+ "sha1",
+ "time",
+ "zeroize",
+ "zopfli",
+ "zstd 0.13.3",
+]
+
+[[package]]
+name = "zip"
 version = "7.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "bdd8a47718a4ee5fe78e07667cd36f3de80e7c2bfe727c7074245ffc7303c037"
@@ -10317,7 +10438,7 @@ dependencies = [
  "getrandom 0.3.4",
  "hmac",
  "indexmap",
- "lzma-rust2",
+ "lzma-rust2 0.15.4",
  "memchr",
  "pbkdf2 0.12.2",
  "ppmd-rust",
