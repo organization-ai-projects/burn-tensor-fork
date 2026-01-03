@@ -337,9 +337,9 @@ dependencies = [
 
 [[package]]
 name = "axum"
-version = "0.8.7"
+version = "0.8.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5b098575ebe77cb6d14fc7f32749631a6e44edbef6b796f89b020e99ba20d425"
+checksum = "8b52af3cb4058c895d37317bb27508dccc8e5f2d39454016b297bf4a400597b8"
 dependencies = [
  "axum-core",
  "base64 0.22.1",
@@ -650,7 +650,7 @@ name = "burn-autodiff"
 version = "0.20.0-pre.6"
 dependencies = [
  "burn-backend",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "derive-new",
  "hashbrown 0.16.1",
  "log",
@@ -665,7 +665,7 @@ dependencies = [
 name = "burn-backend"
 version = "0.20.0-pre.6"
 dependencies = [
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "bytemuck",
  "cubecl",
  "derive-new",
@@ -706,7 +706,7 @@ name = "burn-candle"
 version = "0.20.0-pre.6"
 dependencies = [
  "burn-backend",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "burn-tch",
  "candle-core",
  "derive-new",
@@ -719,7 +719,7 @@ dependencies = [
  "burn-communication",
  "burn-cuda",
  "burn-ndarray",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "burn-tensor",
  "burn-wgpu",
  "bytes",
@@ -740,7 +740,7 @@ dependencies = [
  "burn",
  "burn-collective",
  "burn-communication",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "futures",
  "interprocess",
  "rmp-serde",
@@ -756,7 +756,7 @@ name = "burn-communication"
 version = "0.20.0-pre.6"
 dependencies = [
  "axum",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "burn-tensor",
  "bytes",
  "derive-new",
@@ -789,7 +789,7 @@ dependencies = [
  "burn-remote",
  "burn-rocm",
  "burn-router",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "burn-tch",
  "burn-tensor",
  "burn-vision",
@@ -832,7 +832,7 @@ dependencies = [
  "burn-cubecl-fusion",
  "burn-fusion",
  "burn-ir",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "cubecl",
  "cubek",
  "derive-new",
@@ -850,7 +850,7 @@ dependencies = [
  "burn-backend",
  "burn-fusion",
  "burn-ir",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "cubecl",
  "cubek",
  "derive-new",
@@ -872,7 +872,7 @@ dependencies = [
 name = "burn-dataset"
 version = "0.20.0-pre.6"
 dependencies = [
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "csv",
  "derive-new",
  "dirs",
@@ -973,7 +973,7 @@ dependencies = [
  "burn-autodiff",
  "burn-backend",
  "burn-ir",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "bytemuck",
  "bytes",
  "const-random",
@@ -1053,7 +1053,7 @@ dependencies = [
  "burn-ir",
  "burn-ndarray",
  "burn-router",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "burn-tensor",
  "bytes",
  "derive-new",
@@ -1086,7 +1086,7 @@ dependencies = [
  "burn-backend",
  "burn-ir",
  "burn-ndarray",
- "burn-std",
+ "burn-std 0.20.0-pre.6",
  "burn-tensor",
  "burn-wgpu",
  "hashbrown 0.16.1",
@@ -1109,6 +1109,20 @@ dependencies = [
  "reqwest",
  "serde",
  "tokio",
+]
+
+[[package]]
+name = "burn-std"
+version = "0.20.0-pre.6"
+source = "git+https://github.com/organization-ai-projects/burn-core-fork.git?branch=main#1efb53ee348eca3d96e3b73e0d460de7ddd5900c"
+dependencies = [
+ "bytemuck",
+ "bytes",
+ "cubecl",
+ "cubecl-common",
+ "half",
+ "num-traits",
+ "serde",
 ]
 
 [[package]]
@@ -1155,7 +1169,7 @@ name = "burn-tensor"
 version = "0.20.0-pre.6"
 dependencies = [
  "burn-backend",
- "burn-std",
+ "burn-std 0.20.0-pre.6 (git+https://github.com/organization-ai-projects/burn-core-fork.git?branch=main)",
  "colored 3.0.0",
  "derive-new",
  "num-traits",
